@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Pseudo-classes</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #eee;
+            margin: 10px;
+            border-radius: 16px;
+            display: inline-block;
+            text-align: center;
+            line-height: 100px;
+            font-size: 24px;
+        }
+
+        div:hover {
+            background-color: #ccc;
+        }
+        a:visited {
+            color: rgb(249, 103, 5);
+        }
+        div:first-child {
+            background-color: #f99;
+        }
+
+        div:last-child {
+            background-color: #9f9;
+        }
+        div#d1 > p {
+            display: none;
+        }
+        div#d1:hover > p {
+            display: block;
+            position: absolute;
+            width: 200px;
+            left: 120px;
+            top: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">01
+        <p>Home</p>
+        <p>Sobre</p>
+        <p>blog</p>
+        <p>Contato</p>
+    </div>
+    
+    <div id="d2">02</div>
+    <div id="d3">03</div>
+</body>
+</html>
