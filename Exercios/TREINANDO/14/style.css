@@ -1,0 +1,234 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top, rgba(255, 83, 143, 0.18), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255, 241, 112, 0.12), transparent 25%),
+        #151128;
+}
+
+.square {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-out;
+}
+
+.square i {
+    position: absolute;
+    inset: 0;
+    border: 2px solid #fff;
+    transition: 0.5s;
+}
+
+.square i:nth-child(1) {
+    border-radius: 38% 32% 63% 37% / 41% 44% 56% 59%;
+    animation: animate 6s linear infinite;
+}
+
+.square i:nth-child(2) {
+    border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+    animation: animate 4s linear infinite;
+}
+
+.square i:nth-child(3) {
+    border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+    animation: animate2 10s linear infinite;
+}
+
+.square:hover i,
+.square.is-active i {
+    border: 6px solid var(--clr);
+    filter: drop-shadow(0 0 20px var(--clr));
+}
+
+@keyframes animate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes animate2 {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    }
+    50% {
+        box-shadow: 0 0 24px rgba(255, 255, 255, 0.16);
+    }
+}
+
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 18px 0;
+    z-index: 2;
+}
+
+.login form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login h2 {
+    min-height: 48px;
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 0.04em;
+}
+
+.login .inputBx {
+    position: relative;
+    width: 100%;
+}
+
+.login .inputBx input {
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    font-size: 1.1em;
+    color: #fff;
+    outline: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.login .inputBx input:focus {
+    transform: scale(1.03);
+    border-color: #fffd44;
+    box-shadow: 0 0 20px rgba(255, 253, 68, 0.25);
+}
+
+.login .inputBx input[type="submit"] {
+    background: linear-gradient(45deg, #ff357a, #fff170);
+    border: none;
+    cursor: pointer;
+    color: #000;
+    font-weight: 600;
+}
+
+.login .inputBx input[type="submit"]:hover {
+    opacity: 0.85;
+}
+
+.login .inputBx input[type="submit"].loading {
+    animation: pulseGlow 1s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.login .inputBx input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.passwordBox input {
+    padding-right: 88px;
+}
+
+.togglePassword {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #fffd44;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.message {
+    min-height: 24px;
+    margin-top: 12px;
+    color: #fffd44;
+    font-size: 0.95em;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.message.show {
+    opacity: 1;
+}
+
+.login .links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.login .links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.login .links a:hover {
+    text-decoration: underline;
+}
+
+.reveal {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+}
+
+.reveal:nth-of-type(1) { animation-delay: 0.15s; }
+.reveal:nth-of-type(2) { animation-delay: 0.3s; }
+.reveal:nth-of-type(3) { animation-delay: 0.45s; }
+.links.reveal { animation-delay: 0.6s; }
+
+@media (max-width: 560px) {
+    .square {
+        width: 92vw;
+        height: 92vw;
+        max-width: 500px;
+        max-height: 500px;
+    }
+
+    .login {
+        width: min(320px, 78vw);
+    }
+}
