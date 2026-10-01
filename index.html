@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 e CSS3 — Exercícios | Marlon</title>
+    <meta name="description" content="Exercícios, desafios e projetos do curso de HTML5 e CSS3 do Curso em Vídeo, feitos por Marlon (marloon-dev).">
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #f6f7f9; --surface: #ffffff; --text: #16181d; --muted: #5b6270;
+            --border: #e2e5ea; --accent: #e34f26; --accent-2: #1572b6;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root { --bg: #0f1115; --surface: #171a21; --text: #e9ecf1; --muted: #9aa3b2; --border: #262b35; --accent: #ff7a50; --accent-2: #5aa9e6; }
+        }
+        * { box-sizing: border-box; margin: 0; }
+        body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+        .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1rem; }
+        header.wrap { padding-block: 3.5rem 2rem; }
+        .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; }
+        h1 { font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.1; margin: .4rem 0 .8rem; }
+        h1 span { background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        header p { color: var(--muted); max-width: 42rem; }
+        .links { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.2rem; }
+        .links a { color: var(--text); border: 1px solid var(--border); background: var(--surface); padding: .45rem .9rem; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: .9rem; }
+        .links a:hover { border-color: var(--accent); }
+        section { margin: 2rem 0 2.5rem; }
+        h2 { font-size: 1.25rem; margin-bottom: 1rem; display: flex; align-items: baseline; gap: .5rem; }
+        h2 small { color: var(--muted); font-weight: 500; font-size: .85rem; }
+        ul { list-style: none; padding: 0; display: grid; gap: .75rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); }
+        .card { display: flex; align-items: center; gap: .75rem; height: 100%; padding: .9rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: .75rem; color: inherit; text-decoration: none; transition: border-color .15s, transform .15s; }
+        .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .card:focus-visible, .links a:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 2px; }
+        .tag { font: 600 .75rem ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); padding: .15rem .45rem; border-radius: .35rem; flex-shrink: 0; }
+        footer.wrap { border-top: 1px solid var(--border); padding-block: 1.5rem 2.5rem; color: var(--muted); font-size: .9rem; }
+        footer a { color: inherit; }
+        @media (prefers-reduced-motion: reduce) { .card { transition: none; } .card:hover { transform: none; } }
+    </style>
+</head>
+<body>
+    <header class="wrap">
+        <p class="eyebrow">Curso em Vídeo</p>
+        <h1>Exercícios de <span>HTML5 e CSS3</span></h1>
+        <p>Os exercícios das aulas, os desafios dos módulos e os projetos que fiz enquanto estudava HTML5 e CSS3. Clique num cartão para abrir o exercício.</p>
+        <nav class="links" aria-label="Links">
+            <a href="https://github.com/marloon-dev/html-css">Código no GitHub</a>
+            <a href="https://github.com/marloon-dev">Perfil @marloon-dev</a>
+        </nav>
+    </header>
+    <main class="wrap">
+        <section aria-labelledby="aulas">
+            <h2 id="aulas">Exercícios das aulas <small>22</small></h2>
+            <ul>
+            <li><a class="card" href="ex001/index.html"><span class="tag">ex001</span><span>Meu primeiro conteúdo</span></a></li>
+            <li><a class="card" href="ex002/index.html"><span class="tag">ex002</span><span>Parágrafos</span></a></li>
+            <li><a class="card" href="ex003/index.html"><span class="tag">ex003</span><span>Imagens</span></a></li>
+            <li><a class="card" href="ex004/index.html"><span class="tag">ex004</span><span>Favicon</span></a></li>
+            <li><a class="card" href="ex006/index.html"><span class="tag">ex006</span><span>Hierarquia de títulos</span></a></li>
+            <li><a class="card" href="ex007/index.html"><span class="tag">ex007</span><span>Endereço (&lt;address&gt;)</span></a></li>
+            <li><a class="card" href="ex008/index.html"><span class="tag">ex008</span><span>Negrito e itálico</span></a></li>
+            <li><a class="card" href="ex008b/index.html"><span class="tag">ex008b</span><span>Outras formatações</span></a></li>
+            <li><a class="card" href="ex009/index.html"><span class="tag">ex009</span><span>Listas</span></a></li>
+            <li><a class="card" href="ex010/index.html"><span class="tag">ex010</span><span>Links</span></a></li>
+            <li><a class="card" href="ex011/index.html"><span class="tag">ex011</span><span>Mídias em HTML5</span></a></li>
+            <li><a class="card" href="ex012/index.html"><span class="tag">ex012</span><span>Vídeo com HTML5</span></a></li>
+            <li><a class="card" href="ex013/index.html"><span class="tag">ex013</span><span>Estilos inline</span></a></li>
+            <li><a class="card" href="ex014/index.html"><span class="tag">ex014</span><span>Estilos internos</span></a></li>
+            <li><a class="card" href="ex015/index.html"><span class="tag">ex015</span><span>Estilos externos</span></a></li>
+            <li><a class="card" href="ex016/cor01.html"><span class="tag">ex016</span><span>Cores em CSS</span></a></li>
+            <li><a class="card" href="ex017/fontes01.html"><span class="tag">ex017</span><span>Fontes com CSS</span></a></li>
+            <li><a class="card" href="ex018/fonts01.html"><span class="tag">ex018</span><span>Alinhamento de texto</span></a></li>
+            <li><a class="card" href="ex019/seletor01.html"><span class="tag">ex019</span><span>Seletores personalizados</span></a></li>
+            <li><a class="card" href="ex020/index.html"><span class="tag">ex020</span><span>Pseudo-classes</span></a></li>
+            <li><a class="card" href="ex021/caixa01.html"><span class="tag">ex021</span><span>Modelo de caixas</span></a></li>
+            <li><a class="card" href="ex022/index.html"><span class="tag">ex022</span><span>Imagens de fundo</span></a></li>
+            </ul>
+        </section>
+        <section aria-labelledby="desafios">
+            <h2 id="desafios">Desafios e treinos <small>7</small></h2>
+            <ul>
+            <li><a class="card" href="Exercios/MODULO%2001/Index.html"><span>Exercício 01 — links e downloads</span></a></li>
+            <li><a class="card" href="Exercios/MODULO%2001/Desafio05/index.html"><span>Desafio 05 — Contacto</span></a></li>
+            <li><a class="card" href="Exercios/MODULO%2001/Desafio06/index.html"><span>Desafio 06 — Tags HTML</span></a></li>
+            <li><a class="card" href="Exercios/MODULO%2001/Desafio09/index.html"><span>Desafio 09 — páginas ligadas</span></a></li>
+            <li><a class="card" href="Exercios/MODULO%2002/ex010/ex010/index.html"><span>Android Site</span></a></li>
+            <li><a class="card" href="Exercios/MODULO%2002/ex022/index.html"><span>Cordel Moderno</span></a></li>
+            <li><a class="card" href="Exercios/TREINANDO/14/index.html"><span>Animated Login Form</span></a></li>
+            </ul>
+        </section>
+        <section aria-labelledby="projetos">
+            <h2 id="projetos">Projetos <small>1</small></h2>
+            <ul>
+            <li><a class="card" href="pet-shop/index.html"><span>Paws &amp; Style — loja de roupas para pets</span></a></li>
+            </ul>
+        </section>
+    </main>
+    <footer class="wrap">
+        <p>Feito por <a href="https://github.com/marloon-dev">Marlon</a> no curso de HTML5 e CSS3 de Gustavo Guanabara (<a href="https://www.cursoemvideo.com/">Curso em Vídeo</a>).</p>
+    </footer>
+</body>
+</html>
